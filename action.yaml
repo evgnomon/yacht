@@ -1,0 +1,12 @@
+name: 'Github Actions for Ansible Playbooks'
+description: 'Github Actions for Ansible Playbooks'
+inputs:
+  playbook:
+    description: 'Path to the Ansible playbook'
+    required: true
+  inventory:
+    description: 'Path to the inventory file'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
