@@ -4,9 +4,11 @@ inputs:
   playbook:
     description: 'Path to the Ansible playbook'
     required: true
+    default: 'playbooks/main.yaml'
   inventory:
     description: 'Path to the inventory file'
     required: true
+    default: '/opt/yacht/inventory'
 runs:
   using: 'docker'
   image: 'Dockerfile'

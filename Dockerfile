@@ -4,9 +4,10 @@ FROM python:3.9-slim
 RUN pip install ansible
 
 # Copy entry script
-COPY entrypoint.sh /entrypoint.sh
+# RUN mkdir -p /opt/yacht
+COPY . /opt/yacht
 
 # Make the entry script executable
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /opt/yacht/entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/opt/yacht/entrypoint.sh"]
