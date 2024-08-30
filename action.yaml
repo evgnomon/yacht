@@ -7,7 +7,7 @@ inputs:
     default: 'playbooks/main.yaml'
   inventory:
     description: 'Path to the inventory file'
-    required: true
+    required: false
     default: '/opt/yacht/inventory'
 runs:
   using: 'docker'

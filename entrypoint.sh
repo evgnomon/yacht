@@ -1,4 +1,3 @@
-#!/bin/sh -l
+#!/bin/sh
 
-# Run the Ansible playbook
-ansible-playbook -i "${INPUT_INVENTORY}" "${INPUT_PLAYBOOK}"
+ansible-playbook -i "${INPUT_INVENTORY}" "${INPUT_PLAYBOOK}" -e 'ansible_python_interpreter=/opt/python/bin/python3'
