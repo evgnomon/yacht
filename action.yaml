@@ -9,6 +9,10 @@ inputs:
     description: 'Path to the inventory file'
     required: false
     default: '/opt/yacht/inventory'
+  args:
+    description: 'arguments passed to ansible playbook'
+    required: false
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
