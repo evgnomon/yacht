@@ -3,16 +3,17 @@
 export ANSIBLE_STDOUT_CALLBACK=yaml
 
 if [ -z "$INPUT_VAULT_PASS" ]; then
-    ansible-playbook -i "${INPUT_INVENTORY}"\
-    "${INPUT_PLAYBOOK}" -v \
+  ansible-playbook -v \
     -e 'ansible_python_interpreter=/opt/python/bin/python3'\
-    ${INPUT_ARGS}
+    -i "$INPUT_INVENTORY" \
+    "$INPUT_PLAYBOOK" \
+    $INPUT_ARGS
   exit $?
 fi
 
-ANSIBLE_VAULT_PASSWORD_FILE=<(echo "$INPUT_VAULT_PASS")\
-  ansible-playbook -i "${INPUT_INVENTORY}"\
-  --vault-password-file <(echo "$INPUT_VAULT") \
-  "${INPUT_PLAYBOOK}" -v \
+ANSIBLE_VAULT_PASSWORD_FILE=<(echo "$INPUT_VAULT_PASS") INPUT_VAULT_FILE=<(echo "$INPUT_VAULT")\
+  ansible-playbook -v \
   -e 'ansible_python_interpreter=/opt/python/bin/python3'\
-  ${INPUT_ARGS}
+  -i "$INPUT_INVENTORY" \
+  "$INPUT_PLAYBOOK" \
+  $INPUT_ARGS
