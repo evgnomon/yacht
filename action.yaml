@@ -9,6 +9,12 @@ inputs:
     description: 'Path to the inventory file'
     required: false
     default: '/opt/yacht/inventory'
+  vault_pass:
+    description: 'Vault password'
+    required: false
+  vault:
+    description: 'Vault file content'
+    required: false
   args:
     description: 'arguments passed to ansible playbook'
     required: false
