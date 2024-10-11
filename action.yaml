@@ -15,6 +15,9 @@ inputs:
   vault:
     description: 'Vault file content'
     required: false
+  github_token:
+    description: 'Github Token'
+    required: false
   args:
     description: 'arguments passed to ansible playbook'
     required: false
