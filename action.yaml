@@ -18,6 +18,10 @@ inputs:
   github_token:
     description: 'Github Token'
     required: false
+  container_network:
+    description: 'Container network'
+    required: false
+    default: ''
   args:
     description: 'arguments passed to ansible playbook'
     required: false
